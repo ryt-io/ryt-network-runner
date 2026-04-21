@@ -23,12 +23,12 @@ import (
 
 	"go.uber.org/multierr"
 
-	"github.com/ava-labs/avalanche-network-runner/local"
-	"github.com/ava-labs/avalanche-network-runner/network"
-	"github.com/ava-labs/avalanche-network-runner/network/node"
-	"github.com/ava-labs/avalanche-network-runner/rpcpb"
-	"github.com/ava-labs/avalanche-network-runner/utils"
-	"github.com/ava-labs/avalanche-network-runner/utils/constants"
+	"github.com/ryt-io/ryt-network-runner/local"
+	"github.com/ryt-io/ryt-network-runner/network"
+	"github.com/ryt-io/ryt-network-runner/network/node"
+	"github.com/ryt-io/ryt-network-runner/rpcpb"
+	"github.com/ryt-io/ryt-network-runner/utils"
+	"github.com/ryt-io/ryt-network-runner/utils/constants"
 	"github.com/ava-labs/avalanchego/config"
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/avalanchego/message"

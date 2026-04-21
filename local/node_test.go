@@ -16,7 +16,7 @@ import (
 
 	"github.com/ava-labs/avalanchego/utils/crypto/bls/signer/localsigner"
 
-	"github.com/ava-labs/avalanche-network-runner/network/node"
+	"github.com/ryt-io/ryt-network-runner/network/node"
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/avalanchego/message"
 	"github.com/ava-labs/avalanchego/network/peer"

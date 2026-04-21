@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	api "github.com/ava-labs/avalanche-network-runner/api"
+	api "github.com/ryt-io/ryt-network-runner/api"
 	admin "github.com/ava-labs/avalanchego/api/admin"
 
 	avm "github.com/ava-labs/avalanchego/vms/avm"

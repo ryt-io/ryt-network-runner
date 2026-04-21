@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	rpcb "github.com/ava-labs/avalanche-network-runner/rpcpb"
-	"github.com/ava-labs/avalanche-network-runner/ux"
+	rpcb "github.com/ryt-io/ryt-network-runner/rpcpb"
+	"github.com/ryt-io/ryt-network-runner/ux"
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/avalanchego/staking"
 	"github.com/ava-labs/avalanchego/utils/beacon"

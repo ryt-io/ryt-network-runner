@@ -9,8 +9,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/ava-labs/avalanche-network-runner/local"
-	"github.com/ava-labs/avalanche-network-runner/network"
+	"github.com/ryt-io/ryt-network-runner/local"
+	"github.com/ryt-io/ryt-network-runner/network"
 	"github.com/ava-labs/avalanchego/utils/logging"
 	"go.uber.org/zap"
 )

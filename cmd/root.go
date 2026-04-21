@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ava-labs/avalanche-network-runner/cmd/control"
-	"github.com/ava-labs/avalanche-network-runner/cmd/ping"
-	"github.com/ava-labs/avalanche-network-runner/cmd/server"
+	"github.com/ryt-io/ryt-network-runner/cmd/control"
+	"github.com/ryt-io/ryt-network-runner/cmd/ping"
+	"github.com/ryt-io/ryt-network-runner/cmd/server"
 	"github.com/spf13/cobra"
 )
 

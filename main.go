@@ -3,7 +3,7 @@
 package main
 
 import (
-	"github.com/ava-labs/avalanche-network-runner/cmd"
+	"github.com/ryt-io/ryt-network-runner/cmd"
 )
 
 func main() {

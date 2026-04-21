@@ -20,12 +20,12 @@ import (
 
 	"github.com/ava-labs/avalanchego/utils/crypto/bls/signer/localsigner"
 
-	"github.com/ava-labs/avalanche-network-runner/api"
-	"github.com/ava-labs/avalanche-network-runner/network"
-	"github.com/ava-labs/avalanche-network-runner/network/node"
-	"github.com/ava-labs/avalanche-network-runner/network/node/status"
-	"github.com/ava-labs/avalanche-network-runner/utils"
-	"github.com/ava-labs/avalanche-network-runner/utils/constants"
+	"github.com/ryt-io/ryt-network-runner/api"
+	"github.com/ryt-io/ryt-network-runner/network"
+	"github.com/ryt-io/ryt-network-runner/network/node"
+	"github.com/ryt-io/ryt-network-runner/network/node/status"
+	"github.com/ryt-io/ryt-network-runner/utils"
+	"github.com/ryt-io/ryt-network-runner/utils/constants"
 	"github.com/ava-labs/avalanchego/config"
 	avagonode "github.com/ava-labs/avalanchego/config/node"
 	"github.com/ava-labs/avalanchego/ids"

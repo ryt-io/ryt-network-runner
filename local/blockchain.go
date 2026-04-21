@@ -27,9 +27,9 @@ import (
 	xbuilder "github.com/ava-labs/avalanchego/wallet/chain/x/builder"
 	xsigner "github.com/ava-labs/avalanchego/wallet/chain/x/signer"
 
-	"github.com/ava-labs/avalanche-network-runner/network"
-	"github.com/ava-labs/avalanche-network-runner/network/node"
-	"github.com/ava-labs/avalanche-network-runner/utils"
+	"github.com/ryt-io/ryt-network-runner/network"
+	"github.com/ryt-io/ryt-network-runner/network/node"
+	"github.com/ryt-io/ryt-network-runner/utils"
 	"github.com/ava-labs/avalanchego/api/admin"
 	"github.com/ava-labs/avalanchego/config"
 	"github.com/ava-labs/avalanchego/genesis"

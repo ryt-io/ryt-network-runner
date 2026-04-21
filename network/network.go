@@ -5,7 +5,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/ava-labs/avalanche-network-runner/network/node"
+	"github.com/ryt-io/ryt-network-runner/network/node"
 	"github.com/ava-labs/avalanchego/ids"
 )
 

@@ -1,4 +1,4 @@
-module github.com/ava-labs/avalanche-network-runner
+module github.com/ryt-io/ryt-network-runner
 
 go 1.24.8
 

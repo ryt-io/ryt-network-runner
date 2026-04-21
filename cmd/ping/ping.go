@@ -7,9 +7,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/ava-labs/avalanche-network-runner/client"
-	"github.com/ava-labs/avalanche-network-runner/utils/constants"
-	"github.com/ava-labs/avalanche-network-runner/ux"
+	"github.com/ryt-io/ryt-network-runner/client"
+	"github.com/ryt-io/ryt-network-runner/utils/constants"
+	"github.com/ryt-io/ryt-network-runner/ux"
 	"github.com/ava-labs/avalanchego/utils/logging"
 	"github.com/spf13/cobra"
 )

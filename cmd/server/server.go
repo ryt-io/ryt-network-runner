@@ -11,9 +11,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/ava-labs/avalanche-network-runner/server"
-	"github.com/ava-labs/avalanche-network-runner/utils"
-	"github.com/ava-labs/avalanche-network-runner/utils/constants"
+	"github.com/ryt-io/ryt-network-runner/server"
+	"github.com/ryt-io/ryt-network-runner/utils"
+	"github.com/ryt-io/ryt-network-runner/utils/constants"
 	"github.com/ava-labs/avalanchego/utils/logging"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
