@@ -5,7 +5,7 @@ package ux
 import (
 	"fmt"
 
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/ryt-io/ryt-v2/utils/logging"
 )
 
 func Print(log logging.Logger, msg string, args ...interface{}) {

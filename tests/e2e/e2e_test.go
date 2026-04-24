@@ -14,10 +14,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ava-labs/avalanchego/api/admin"
-	"github.com/ava-labs/avalanchego/message"
-	avago_constants "github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/vms/platformvm"
+	"github.com/ryt-io/ryt-v2/api/admin"
+	"github.com/ryt-io/ryt-v2/message"
+	avago_constants "github.com/ryt-io/ryt-v2/utils/constants"
+	"github.com/ryt-io/ryt-v2/runtime/platformvm"
 	"github.com/prometheus/client_golang/prometheus"
 	"golang.org/x/exp/maps"
 
@@ -27,8 +27,8 @@ import (
 	"github.com/ryt-io/ryt-network-runner/utils"
 	"github.com/ryt-io/ryt-network-runner/utils/constants"
 	"github.com/ryt-io/ryt-network-runner/ux"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/ryt-io/ryt-v2/ids"
+	"github.com/ryt-io/ryt-v2/utils/logging"
 	ginkgo "github.com/onsi/ginkgo/v2"
 	"github.com/onsi/gomega"
 )

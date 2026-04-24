@@ -14,9 +14,9 @@ import (
 	"github.com/ryt-io/ryt-network-runner/network"
 	"github.com/ryt-io/ryt-network-runner/network/node"
 	"github.com/ryt-io/ryt-network-runner/utils"
-	"github.com/ava-labs/avalanchego/config"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/ryt-io/ryt-v2/config"
+	"github.com/ryt-io/ryt-v2/ids"
+	"github.com/ryt-io/ryt-v2/utils/logging"
 	dircopy "github.com/otiai10/copy"
 	"golang.org/x/exp/maps"
 )

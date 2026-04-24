@@ -14,7 +14,7 @@ import (
 
 	"github.com/ryt-io/ryt-network-runner/rpcpb"
 	"github.com/ryt-io/ryt-network-runner/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/ryt-io/ryt-v2/utils/logging"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"

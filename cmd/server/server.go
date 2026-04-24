@@ -14,7 +14,7 @@ import (
 	"github.com/ryt-io/ryt-network-runner/server"
 	"github.com/ryt-io/ryt-network-runner/utils"
 	"github.com/ryt-io/ryt-network-runner/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/ryt-io/ryt-v2/utils/logging"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 )

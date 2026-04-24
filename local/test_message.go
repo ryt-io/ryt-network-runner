@@ -1,35 +1,24 @@
 package local
 
-import "github.com/ava-labs/avalanchego/message"
+import "github.com/ryt-io/ryt-v2/message"
 
-var _ message.OutboundMessage = &TestMsg{}
-
-type TestMsg struct {
-	op               message.Op
-	bytes            []byte
-	bypassThrottling bool
+type stubOutboundMessage struct {
+	bypassThrottling      bool
+	op                    message.Op
+	bytes                 []byte
+	bytesSavedCompression int
 }
 
-func NewTestMsg(op message.Op, bytes []byte, bypassThrottling bool) *TestMsg {
-	return &TestMsg{
-		op:               op,
-		bytes:            bytes,
-		bypassThrottling: bypassThrottling,
+func (s stubOutboundMessage) BypassThrottling() bool      { return s.bypassThrottling }
+func (s stubOutboundMessage) Op() message.Op              { return s.op }
+func (s stubOutboundMessage) Bytes() []byte               { return s.bytes }
+func (s stubOutboundMessage) BytesSavedCompression() int { return s.bytesSavedCompression }
+
+func newOutboundMessage(op message.Op, payload []byte, bypassThrottling bool) message.OutboundMessage {
+	return stubOutboundMessage{
+		bypassThrottling:      bypassThrottling,
+		op:                    op,
+		bytes:                 payload,
+		bytesSavedCompression: 0,
 	}
-}
-
-func (m *TestMsg) BypassThrottling() bool {
-	return m.bypassThrottling
-}
-
-func (m *TestMsg) Op() message.Op {
-	return m.op
-}
-
-func (m *TestMsg) Bytes() []byte {
-	return m.bytes
-}
-
-func (*TestMsg) BytesSavedCompression() int {
-	return 0
 }

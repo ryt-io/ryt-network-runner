@@ -11,11 +11,11 @@ import (
 
 	"github.com/ryt-io/ryt-network-runner/network/node"
 	"github.com/ryt-io/ryt-network-runner/utils"
-	"github.com/ava-labs/avalanchego/genesis"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
-	"github.com/ava-labs/avalanchego/utils/units"
+	"github.com/ryt-io/ryt-v2/genesis"
+	"github.com/ryt-io/ryt-v2/ids"
+	"github.com/ryt-io/ryt-v2/utils/constants"
+	"github.com/ryt-io/ryt-v2/utils/formatting/address"
+	"github.com/ryt-io/ryt-v2/utils/units"
 )
 
 const validatorStake = units.MegaAvax
@@ -102,7 +102,7 @@ func NewAvalancheGoGenesis(
 	genesisVdrs []ids.NodeID,
 ) ([]byte, error) {
 	switch networkID {
-	case constants.TestnetID, constants.MainnetID, constants.LocalID:
+	case constants.TestnetID, constants.ProdnetID, constants.LocalID:
 		return nil, errors.New("network ID can't be mainnet, testnet or local network ID")
 	}
 	switch {
@@ -123,7 +123,7 @@ func NewAvalancheGoGenesis(
 		Allocations: []genesis.UnparsedAllocation{
 			{
 				ETHAddr:       "0x0000000000000000000000000000000000000000",
-				AVAXAddr:      genesisVdrStakeAddr, // Owner doesn't matter
+				RYTAddr:       genesisVdrStakeAddr, // Owner doesn't matter
 				InitialAmount: 0,
 				UnlockSchedule: []genesis.LockedAmount{ // Provides stake to validators
 					{
@@ -151,7 +151,7 @@ func NewAvalancheGoGenesis(
 			config.Allocations,
 			genesis.UnparsedAllocation{
 				ETHAddr:       "0x0000000000000000000000000000000000000000",
-				AVAXAddr:      xChainAddr,
+				RYTAddr:       xChainAddr,
 				InitialAmount: xChainBal.Balance.Uint64(),
 				UnlockSchedule: []genesis.LockedAmount{
 					{

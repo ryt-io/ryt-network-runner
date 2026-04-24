@@ -16,42 +16,42 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ava-labs/avalanchego/utils/crypto/bls/signer/localsigner"
+	"github.com/ryt-io/ryt-v2/utils/crypto/bls/signer/localsigner"
 
-	"github.com/ava-labs/avalanchego/vms/platformvm/reward"
+	"github.com/ryt-io/ryt-v2/runtime/platformvm/reward"
 
-	"github.com/ava-labs/avalanchego/vms/avm"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
-	"github.com/ava-labs/avalanchego/vms/components/verify"
-	"github.com/ava-labs/avalanchego/wallet/chain/x"
-	xbuilder "github.com/ava-labs/avalanchego/wallet/chain/x/builder"
-	xsigner "github.com/ava-labs/avalanchego/wallet/chain/x/signer"
+	"github.com/ryt-io/ryt-v2/runtime/avm"
+	"github.com/ryt-io/ryt-v2/runtime/components/ryt"
+	"github.com/ryt-io/ryt-v2/runtime/components/verify"
+	"github.com/ryt-io/ryt-v2/wallet/chain/x"
+	xbuilder "github.com/ryt-io/ryt-v2/wallet/chain/x/builder"
+	xsigner "github.com/ryt-io/ryt-v2/wallet/chain/x/signer"
 
 	"github.com/ryt-io/ryt-network-runner/network"
 	"github.com/ryt-io/ryt-network-runner/network/node"
 	"github.com/ryt-io/ryt-network-runner/utils"
-	"github.com/ava-labs/avalanchego/api/admin"
-	"github.com/ava-labs/avalanchego/config"
-	"github.com/ava-labs/avalanchego/genesis"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/crypto/secp256k1"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/set"
-	"github.com/ava-labs/avalanchego/vms/platformvm"
-	"github.com/ava-labs/avalanchego/vms/platformvm/fx"
-	"github.com/ava-labs/avalanchego/vms/platformvm/signer"
-	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
-	"github.com/ava-labs/avalanchego/wallet/chain/p"
-	pbuilder "github.com/ava-labs/avalanchego/wallet/chain/p/builder"
-	psigner "github.com/ava-labs/avalanchego/wallet/chain/p/signer"
-	pwallet "github.com/ava-labs/avalanchego/wallet/chain/p/wallet"
-	"github.com/ava-labs/avalanchego/wallet/subnet/primary"
-	"github.com/ava-labs/avalanchego/wallet/subnet/primary/common"
+	"github.com/ryt-io/ryt-v2/api/admin"
+	"github.com/ryt-io/ryt-v2/config"
+	"github.com/ryt-io/ryt-v2/genesis"
+	"github.com/ryt-io/ryt-v2/ids"
+	"github.com/ryt-io/ryt-v2/utils/crypto/secp256k1"
+	"github.com/ryt-io/ryt-v2/utils/logging"
+	"github.com/ryt-io/ryt-v2/utils/set"
+	"github.com/ryt-io/ryt-v2/runtime/platformvm"
+	"github.com/ryt-io/ryt-v2/runtime/platformvm/fx"
+	"github.com/ryt-io/ryt-v2/runtime/platformvm/signer"
+	"github.com/ryt-io/ryt-v2/runtime/platformvm/txs"
+	"github.com/ryt-io/ryt-v2/runtime/secp256k1fx"
+	"github.com/ryt-io/ryt-v2/wallet/chain/p"
+	pbuilder "github.com/ryt-io/ryt-v2/wallet/chain/p/builder"
+	psigner "github.com/ryt-io/ryt-v2/wallet/chain/p/signer"
+	pwallet "github.com/ryt-io/ryt-v2/wallet/chain/p/wallet"
+	"github.com/ryt-io/ryt-v2/wallet/subnet/primary"
+	"github.com/ryt-io/ryt-v2/wallet/subnet/primary/common"
 	"go.uber.org/zap"
 	"golang.org/x/exp/maps"
 
-	avagoConstants "github.com/ava-labs/avalanchego/utils/constants"
+	avagoConstants "github.com/ryt-io/ryt-v2/utils/constants"
 )
 
 const (
@@ -103,10 +103,10 @@ func (ln *localNetwork) getNode() node.Node {
 
 func (ln *localNetwork) getMinValidatorWeight() uint64 {
 	switch ln.networkID {
-	case avagoConstants.FujiID:
-		return genesis.FujiParams.MinValidatorStake
-	case avagoConstants.MainnetID:
-		return genesis.MainnetParams.MinValidatorStake
+	case avagoConstants.DevnetID:
+		return genesis.DevnetParams.MinValidatorStake
+	case avagoConstants.ProdnetID:
+		return genesis.ProdnetParams.MinValidatorStake
 	default:
 		return genesis.LocalParams.MinValidatorStake
 	}
@@ -953,7 +953,7 @@ func (ln *localNetwork) addPrimaryValidators(
 	w *wallet,
 ) error {
 	ln.log.Info(logging.Green.Wrap("adding the nodes as primary network validators"))
-	// ref. https://docs.avax.network/build/avalanchego-apis/p-chain/#platformgetcurrentvalidators
+	// ref. https://docs.ryt.network/build/avalanchego-apis/p-chain/#platformgetcurrentvalidators
 	cctx, cancel := createDefaultCtx(ctx)
 	vdrs, err := platformCli.GetCurrentValidators(cctx, avagoConstants.PrimaryNetworkID, nil)
 	cancel()
@@ -1010,7 +1010,7 @@ func (ln *localNetwork) addPrimaryValidators(
 				Subnet: ids.Empty,
 			},
 			proofOfPossession,
-			w.pCTX.AVAXAssetID,
+			w.pCTX.RYTAssetID,
 			&secp256k1fx.OutputOwners{
 				Threshold: 1,
 				Addrs:     []ids.ShortID{w.addr},
@@ -1066,9 +1066,9 @@ func exportXChainToPChain(ctx context.Context, w *wallet, owner *secp256k1fx.Out
 	defer cancel()
 	_, err := w.xWallet.IssueExportTx(
 		ids.Empty,
-		[]*avax.TransferableOutput{
+		[]*ryt.TransferableOutput{
 			{
-				Asset: avax.Asset{
+				Asset: ryt.Asset{
 					ID: subnetAssetID,
 				},
 				Out: &secp256k1fx.TransferOutput{

@@ -7,10 +7,10 @@ import (
 
 	"github.com/ryt-io/ryt-network-runner/api"
 	"github.com/ryt-io/ryt-network-runner/network/node/status"
-	"github.com/ava-labs/avalanchego/config"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/network/peer"
-	"github.com/ava-labs/avalanchego/snow/networking/router"
+	"github.com/ryt-io/ryt-v2/config"
+	"github.com/ryt-io/ryt-v2/ids"
+	"github.com/ryt-io/ryt-v2/network/peer"
+	"github.com/ryt-io/ryt-v2/pom/networking/router"
 )
 
 // Node represents an AvalancheGo node

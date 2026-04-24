@@ -1,12 +1,12 @@
 package api
 
 import (
-	"github.com/ava-labs/avalanchego/api/admin"
-	"github.com/ava-labs/avalanchego/api/info"
-	"github.com/ava-labs/avalanchego/indexer"
-	"github.com/ava-labs/avalanchego/vms/avm"
-	"github.com/ava-labs/avalanchego/vms/platformvm"
-	evmclient "github.com/ava-labs/coreth/plugin/evm/client"
+	"github.com/ryt-io/ryt-v2/api/admin"
+	"github.com/ryt-io/ryt-v2/api/info"
+	"github.com/ryt-io/ryt-v2/indexer"
+	"github.com/ryt-io/ryt-v2/runtime/avm"
+	"github.com/ryt-io/ryt-v2/runtime/platformvm"
+	evmclient "github.com/ryt-io/ryt-v2/graft/ethereum/plugin/evm/client"
 )
 
 // Issues API calls to a node

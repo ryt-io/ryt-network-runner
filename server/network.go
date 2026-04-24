@@ -22,10 +22,10 @@ import (
 	"github.com/ryt-io/ryt-network-runner/utils"
 	"github.com/ryt-io/ryt-network-runner/utils/constants"
 	"github.com/ryt-io/ryt-network-runner/ux"
-	"github.com/ava-labs/avalanchego/config"
-	"github.com/ava-labs/avalanchego/ids"
-	avago_constants "github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/ryt-io/ryt-v2/config"
+	"github.com/ryt-io/ryt-v2/ids"
+	avago_constants "github.com/ryt-io/ryt-v2/utils/constants"
+	"github.com/ryt-io/ryt-v2/utils/logging"
 	"golang.org/x/exp/maps"
 )
 
@@ -886,7 +886,7 @@ func (lc *localNetwork) Stop(ctx context.Context) {
 }
 
 func (lc *localNetwork) GetWaitForHealthyTimeout() time.Duration {
-	if lc.networkID == avago_constants.FujiID || lc.networkID == 0 {
+	if lc.networkID == avago_constants.DevnetID || lc.networkID == 0 {
 		return 6 * time.Hour
 	} else {
 		return 3 * time.Minute

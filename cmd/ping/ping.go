@@ -10,7 +10,7 @@ import (
 	"github.com/ryt-io/ryt-network-runner/client"
 	"github.com/ryt-io/ryt-network-runner/utils/constants"
 	"github.com/ryt-io/ryt-network-runner/ux"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/ryt-io/ryt-v2/utils/logging"
 	"github.com/spf13/cobra"
 )
 

@@ -20,11 +20,11 @@ import (
 	"github.com/ryt-io/ryt-network-runner/utils"
 	"github.com/ryt-io/ryt-network-runner/utils/constants"
 	"github.com/ryt-io/ryt-network-runner/ux"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/ryt-io/ryt-v2/utils/logging"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 
-	avagoConstants "github.com/ava-labs/avalanchego/utils/constants"
+	avagoConstants "github.com/ryt-io/ryt-v2/utils/constants"
 )
 
 func init() {
@@ -394,7 +394,7 @@ func startFunc(*cobra.Command, []string) error {
 	defer cli.Close()
 
 	if fuji {
-		networkID = avagoConstants.FujiID
+		networkID = avagoConstants.DevnetID
 		requestTimeout = 5 * time.Hour // increase timeout for fuji network
 		ux.Print(log, "%s", logging.Yellow.Wrap("setting request timeout to "+requestTimeout.String()))
 	}

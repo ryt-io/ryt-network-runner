@@ -6,11 +6,11 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/ava-labs/coreth/ethclient"
-	"github.com/ava-labs/coreth/interfaces"
-	ethereum "github.com/ava-labs/libevm"
-	"github.com/ava-labs/libevm/common"
-	"github.com/ava-labs/libevm/core/types"
+	"github.com/ryt-io/ryt-v2/graft/ethereum/ethclient"
+	"github.com/ryt-io/ryt-v2/graft/ethereum/interfaces"
+	ethereum "github.com/ryt-io/libevm"
+	"github.com/ryt-io/libevm/common"
+	"github.com/ryt-io/libevm/core/types"
 )
 
 // Interface compliance

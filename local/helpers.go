@@ -12,8 +12,8 @@ import (
 	"time"
 
 	"github.com/ryt-io/ryt-network-runner/network/node"
-	"github.com/ava-labs/avalanchego/config"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/ryt-io/ryt-v2/config"
+	"github.com/ryt-io/ryt-v2/utils/logging"
 )
 
 const (

@@ -12,11 +12,11 @@ import (
 
 	rpcb "github.com/ryt-io/ryt-network-runner/rpcpb"
 	"github.com/ryt-io/ryt-network-runner/ux"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/staking"
-	"github.com/ava-labs/avalanchego/utils/beacon"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/ryt-io/ryt-v2/ids"
+	"github.com/ryt-io/ryt-v2/staking"
+	"github.com/ryt-io/ryt-v2/utils/beacon"
+	"github.com/ryt-io/ryt-v2/utils/constants"
+	"github.com/ryt-io/ryt-v2/utils/logging"
 )
 
 const (
@@ -202,7 +202,7 @@ func WaitForFile(
 }
 
 func IsPublicNetwork(networkID uint32) bool {
-	return networkID == constants.FujiID || networkID == constants.MainnetID
+	return networkID == constants.DevnetID || networkID == constants.ProdnetID
 }
 
 func IsCustomNetwork(networkID uint32) bool {

@@ -8,13 +8,13 @@ import (
 	"math/big"
 	"time"
 
-	avago_upgrade "github.com/ava-labs/avalanchego/upgrade"
-	"github.com/ava-labs/avalanchego/utils/crypto/bls/signer/localsigner"
-	"github.com/ava-labs/avalanchego/utils/formatting"
-	"github.com/ava-labs/avalanchego/vms/platformvm/signer"
-	"github.com/ava-labs/libevm/common"
-	"github.com/ava-labs/libevm/core"
-	"github.com/ava-labs/subnet-evm/params"
+	avago_upgrade "github.com/ryt-io/ryt-v2/upgrade"
+	"github.com/ryt-io/ryt-v2/utils/crypto/bls/signer/localsigner"
+	"github.com/ryt-io/ryt-v2/utils/formatting"
+	"github.com/ryt-io/ryt-v2/runtime/platformvm/signer"
+	"github.com/ryt-io/libevm/common"
+	"github.com/ryt-io/libevm/core"
+	"github.com/ryt-io/subnet-evm/params"
 )
 
 const (

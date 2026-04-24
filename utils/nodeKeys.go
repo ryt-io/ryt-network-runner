@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/ava-labs/avalanchego/utils/crypto/bls/signer/localsigner"
+	"github.com/ryt-io/ryt-v2/utils/crypto/bls/signer/localsigner"
 
-	"github.com/ava-labs/avalanchego/staking"
+	"github.com/ryt-io/ryt-v2/staking"
 	"golang.org/x/sync/errgroup"
 )
 

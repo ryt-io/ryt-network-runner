@@ -3,8 +3,8 @@ package api
 import (
 	"context"
 
-	"github.com/ava-labs/avalanchego/api/health"
-	"github.com/ava-labs/avalanchego/utils/rpc"
+	"github.com/ryt-io/ryt-v2/api/health"
+	"github.com/ryt-io/ryt-v2/utils/rpc"
 )
 
 // HealthClient defines the interface for health client operations

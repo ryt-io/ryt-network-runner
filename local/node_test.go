@@ -14,18 +14,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ava-labs/avalanchego/utils/crypto/bls/signer/localsigner"
+	"github.com/ryt-io/ryt-v2/utils/crypto/bls/signer/localsigner"
 
 	"github.com/ryt-io/ryt-network-runner/network/node"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/message"
-	"github.com/ava-labs/avalanchego/network/peer"
-	"github.com/ava-labs/avalanchego/staking"
-	"github.com/ava-labs/avalanchego/upgrade"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/ips"
-	"github.com/ava-labs/avalanchego/utils/wrappers"
-	"github.com/ava-labs/avalanchego/version"
+	"github.com/ryt-io/ryt-v2/ids"
+	"github.com/ryt-io/ryt-v2/message"
+	"github.com/ryt-io/ryt-v2/network/peer"
+	"github.com/ryt-io/ryt-v2/staking"
+	"github.com/ryt-io/ryt-v2/upgrade"
+	"github.com/ryt-io/ryt-v2/utils/constants"
+	"github.com/ryt-io/ryt-v2/utils/ips"
+	"github.com/ryt-io/ryt-v2/utils/wrappers"
+	"github.com/ryt-io/ryt-v2/version"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/stretchr/testify/require"
 )
@@ -105,7 +105,7 @@ func verifyProtocol(
 	myVersion := version.GetCompatibility(upgrade.InitiallyActiveTime).Version()
 
 	verMsg, err := mc.Handshake(
-		constants.MainnetID,
+		constants.ProdnetID,
 		now,
 		myIP,
 		myVersion.Name,
@@ -245,7 +245,7 @@ func TestAttachPeer(t *testing.T) {
 
 	node := localNode{
 		nodeID:    ids.GenerateTestNodeID(),
-		networkID: constants.MainnetID,
+		networkID: constants.ProdnetID,
 		p2pPort:   1,
 		getConnFunc: func(context.Context, node.Node) (net.Conn, error) {
 			return peerConn, nil

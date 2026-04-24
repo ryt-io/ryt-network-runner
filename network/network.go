@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/ryt-io/ryt-network-runner/network/node"
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/ryt-io/ryt-v2/ids"
 )
 
 var (

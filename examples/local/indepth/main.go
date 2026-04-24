@@ -11,9 +11,9 @@ import (
 	"github.com/ryt-io/ryt-network-runner/local"
 	"github.com/ryt-io/ryt-network-runner/network"
 	"github.com/ryt-io/ryt-network-runner/network/node"
-	"github.com/ava-labs/avalanchego/config"
-	"github.com/ava-labs/avalanchego/staking"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/ryt-io/ryt-v2/config"
+	"github.com/ryt-io/ryt-v2/staking"
+	"github.com/ryt-io/ryt-v2/utils/logging"
 	"go.uber.org/zap"
 )
 
@@ -64,7 +64,7 @@ func main() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	binaryPath := fmt.Sprintf("%s%s", goPath, "/src/github.com/ava-labs/avalanchego/build/avalanchego")
+	binaryPath := fmt.Sprintf("%s%s", goPath, "/src/github.com/ryt-io/ryt-v2/build/avalanchego")
 	if err := run(log, binaryPath); err != nil {
 		log.Fatal("fatal error", zap.Error(err))
 		os.Exit(1)

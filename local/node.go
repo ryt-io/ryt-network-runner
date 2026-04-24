@@ -9,28 +9,28 @@ import (
 	"net/netip"
 	"time"
 
-	"github.com/ava-labs/avalanchego/utils/crypto/bls/signer/localsigner"
+	"github.com/ryt-io/ryt-v2/utils/crypto/bls/signer/localsigner"
 
 	"github.com/ryt-io/ryt-network-runner/api"
 	"github.com/ryt-io/ryt-network-runner/network/node"
 	"github.com/ryt-io/ryt-network-runner/network/node/status"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/message"
-	"github.com/ava-labs/avalanchego/network/peer"
-	"github.com/ava-labs/avalanchego/network/throttling"
-	"github.com/ava-labs/avalanchego/snow/networking/router"
-	"github.com/ava-labs/avalanchego/snow/networking/tracker"
-	"github.com/ava-labs/avalanchego/snow/uptime"
-	"github.com/ava-labs/avalanchego/snow/validators"
-	"github.com/ava-labs/avalanchego/staking"
-	"github.com/ava-labs/avalanchego/upgrade"
-	"github.com/ava-labs/avalanchego/utils"
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/math/meter"
-	"github.com/ava-labs/avalanchego/utils/resource"
-	"github.com/ava-labs/avalanchego/utils/set"
-	"github.com/ava-labs/avalanchego/version"
+	"github.com/ryt-io/ryt-v2/ids"
+	"github.com/ryt-io/ryt-v2/message"
+	"github.com/ryt-io/ryt-v2/network/peer"
+	"github.com/ryt-io/ryt-v2/network/throttling"
+	"github.com/ryt-io/ryt-v2/pom/networking/router"
+	"github.com/ryt-io/ryt-v2/pom/networking/tracker"
+	"github.com/ryt-io/ryt-v2/pom/uptime"
+	"github.com/ryt-io/ryt-v2/pom/validators"
+	"github.com/ryt-io/ryt-v2/staking"
+	"github.com/ryt-io/ryt-v2/upgrade"
+	"github.com/ryt-io/ryt-v2/utils"
+	"github.com/ryt-io/ryt-v2/utils/constants"
+	"github.com/ryt-io/ryt-v2/utils/logging"
+	"github.com/ryt-io/ryt-v2/utils/math/meter"
+	"github.com/ryt-io/ryt-v2/utils/resource"
+	"github.com/ryt-io/ryt-v2/utils/set"
+	"github.com/ryt-io/ryt-v2/version"
 	"github.com/prometheus/client_golang/prometheus"
 )
 
@@ -195,7 +195,7 @@ func (node *localNode) SendOutboundMessage(ctx context.Context, peerID string, c
 	if !ok {
 		return false, fmt.Errorf("peer with ID %s is not attached here", peerID)
 	}
-	msg := NewTestMsg(message.Op(op), content, false)
+	msg := newOutboundMessage(message.Op(op), content, false)
 	return attachedPeer.Send(ctx, msg), nil
 }
 
